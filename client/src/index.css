@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #08080c;
+    color: #e2e8f0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+}
+
+/* Cyber Utilities */
+.bg-grid-cyber {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 102, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 102, 0.04) 1px, transparent 1px);
+}
+
+.cyber-card {
+  background-color: #0f0f17;
+  border: 1px solid #232336;
+  transition: all 0.3s ease;
+}
+
+.cyber-card:hover {
+  border-color: #00FF66;
+  box-shadow: 0 0 25px -5px rgba(0, 255, 102, 0.25);
+}
+
+/* Floating Matrix Animation */
+@keyframes cyberStream {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.25; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.animate-stream-1 { animation: cyberStream 8s linear infinite; }
+.animate-stream-2 { animation: cyberStream 12s linear infinite 2s; }
+.animate-stream-3 { animation: cyberStream 10s linear infinite 4s; }
+.animate-stream-4 { animation: cyberStream 14s linear infinite 1s; }
+
+/* Radar Line Animation */
+@keyframes radarScan {
+  0% { top: 0%; opacity: 0; }
+  50% { opacity: 0.4; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-radar-scan { animation: radarScan 6s ease-in-out infinite; }
